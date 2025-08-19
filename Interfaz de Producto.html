@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaz de Producto - Little Princess</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Interfaz de Producto.css">
+  <!-- ✅ FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  
+  <!-- CARRITO LATERAL -->
+  <div id="carrito-lateral">
+    <h2>🛍 Tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total-carrito"></p>
+    <button id="comprar-desde-carrito">🎉 Comprar</button>
+    <button id="cerrar-carrito">Cerrar</button>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="https://t3.ftcdn.net/jpg/05/89/82/32/360_F_589823248_ZynFeeUtcH3jTTtYEWPxfxGFWuk65lVc.jpg" alt="Little Princess Logo" class="logo">
+      </a>
+    </div>
+    <nav>
+      <a href="index.html">INICIO</a>
+      <a href="Catalogo.html">CATÁLOGO</a>
+      <a href="#contacto">CONTACTO</a>
+      <a href="#nosotros">SOBRE NOSOTROS</a>
+    </nav>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> › 
+    <a href="Catalogo.html">Disfraces</a> › 
+    Blanca Nieves
+  </div>
+
+  <!-- PRODUCTO DETALLE -->
+  <section class="producto-detalle">
+    <div class="columna-izquierda">
+      <div class="producto-imagen">
+        <img src="https://i.pinimg.com/736x/3b/19/1b/3b191b43f0de190aacee6da829eb2092.jpg" alt="Blanca Nieves" id="producto-img">
+      </div>
+    </div>
+
+    <div class="producto-contenido">
+      <h1>Disfraz para bebé de Blanca Nieves</h1>
+      <p class="precio" data-precio="150000">$150.000</p>
+      <p>
+        Este vestido destaca por su falda amplia en tono amarillo brillante, confeccionada en tela suave y vaporosa que da un toque real de fantasía. 
+      </p>
+      <p>
+        Diseñado con materiales cómodos y resistentes, este disfraz es ideal para niñas que sueñan con vivir su propio cuento de hadas.
+      </p>
+
+      <div class="opciones">
+        <label for="talla">Talla:</label>
+        <select id="talla">
+          <option>0 - 3 meses</option>
+          <option>4 - 6 meses</option>
+          <option>7 - 12 meses</option>
+        </select>
+      </div>
+
+      <div class="opciones">
+        <label for="cantidad">Cantidad:</label>
+        <div class="cantidad-control">
+          <button type="button" onclick="cambiarCantidad(-1)">-</button>
+          <input type="number" id="cantidad" value="1" min="1">
+          <button type="button" onclick="cambiarCantidad(1)">+</button>
+        </div>
+      </div>
+
+      <div class="botones">
+        <button class="boton carrito">🛒 Agregar al carrito</button>
+        <button class="boton comprar">✨ Comprar ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-container" id="contacto">
+    <div class="footer-content">
+      <div class="discount-card">
+        <div class="discount-header">
+          <span class="discount-icon">🎁</span>
+          <h3 class="discount-title">Obtén tu 10% de descuento</h3>
+        </div>
+        <p class="discount-text">Regístrate con tu email y recibe tu cupón al instante</p>
+        <form class="discount-form">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit">¡Quiero mi descuento!</button>
+        </form>
+        <div class="coupon-box">
+          <p class="coupon-label">Tu código promocional:</p>
+          <p class="coupon-code">PRINCESA10</p>
+          <p class="coupon-note">*Válido para primer pedido</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-header">
+          <div class="contact-icon">📱</div>
+          <h3 class="contact-title">Contáctanos</h3>
+        </div>
+        <p class="contact-text">¿Tienes preguntas o quieres hacer un pedido especial?</p>
+        <div class="contact-info">
+          <div class="contact-item"><span>✉️</span> contacto@littleprincess.com</div>
+          <div class="contact-item"><span>📞</span> (+57) 301 598 4000</div>
+          <div class="contact-item"><span>📍</span> Barranquilla, Colombia</div>
+        </div>
+        <a href="https://wa.me/573015984000" class="whatsapp-btn">💬 Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Little Princess. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE CARRITO -->
+  <div id="carrito-flotante">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="badge-carrito">0</span>
+  </div>
+
+  <!-- LIBRERÍA DE CONFETI -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <!-- JAVASCRIPT FUNCIONAL -->
+  <script>
+    let carrito = [];
+
+    function cambiarCantidad(valor) {
+      const input = document.getElementById("cantidad");
+      let cantidad = parseInt(input.value) + valor;
+      if (cantidad < 1) cantidad = 1;
+      input.value = cantidad;
+    }
+
+    function animarAlCarrito(imgSrc, event) {
+      let img = document.createElement("img");
+      img.src = imgSrc;
+      img.classList.add("animar");
+      document.body.appendChild(img);
+
+      let x = event.clientX;
+      let y = event.clientY;
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+
+      let carritoX = document.getElementById("carrito-flotante").getBoundingClientRect().left;
+      let carritoY = document.getElementById("carrito-flotante").getBoundingClientRect().top;
+
+      setTimeout(() => {
+        img.style.left = carritoX + "px";
+        img.style.top = carritoY + "px";
+        img.style.opacity = "0";
+      }, 100);
+
+      setTimeout(() => {
+        img.remove();
+      }, 800);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnAgregarCarrito = document.querySelector(".boton.carrito");
+      const btnComprarAhora = document.querySelector(".boton.comprar");
+      const carritoLateral = document.getElementById("carrito-lateral");
+      const cerrarCarrito = document.getElementById("cerrar-carrito");
+      const listaCarrito = document.getElementById("lista-carrito");
+      const totalCarrito = document.getElementById("total-carrito");
+      const btnComprarDesdeCarrito = document.getElementById("comprar-desde-carrito");
+      const btnCarritoFlotante = document.getElementById("carrito-flotante");
+      const badge = document.getElementById("badge-carrito");
+
+      btnAgregarCarrito.addEventListener("click", (e) => {
+        const talla = document.getElementById("talla").value;
+        const cantidad = parseInt(document.getElementById("cantidad").value);
+        const precioBase = parseInt(document.querySelector(".precio").dataset.precio);
+        const imagen = document.getElementById("producto-img").src;
+
+        let productoExistente = carrito.find(p => p.nombre === "Disfraz para bebé de Blanca Nieves" && p.talla === talla);
+
+        if (productoExistente) {
+          productoExistente.cantidad += cantidad;
+          productoExistente.total = productoExistente.precioUnitario * productoExistente.cantidad;
+        } else {
+          carrito.push({
+            nombre: "Disfraz para bebé de Blanca Nieves",
+            precioUnitario: precioBase,
+            talla,
+            cantidad,
+            total: precioBase * cantidad
+          });
+        }
+
+        mostrarCarrito();
+        animarAlCarrito(imagen, e);
+      });
+
+      btnComprarAhora.addEventListener("click", () => {
+        carritoLateral.classList.add("visible");
+        carritoLateral.scrollIntoView({ behavior: "smooth" });
+      });
+
+      cerrarCarrito.addEventListener("click", () => {
+        carritoLateral.classList.remove("visible");
+      });
+
+      btnCarritoFlotante.addEventListener("click", () => {
+        carritoLateral.classList.add("visible");
+      });
+
+      btnComprarDesdeCarrito.addEventListener("click", () => {
+        if (carrito.length === 0) {
+          alert("🛒 Tu carrito está vacío.");
+          return;
+        }
+
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+        alert("🎉 ¡Gracias por tu compra!");
+
+        carrito = [];
+        mostrarCarrito();
+      });
+
+      function mostrarCarrito() {
+        listaCarrito.innerHTML = "";
+
+        if (carrito.length === 0) {
+          listaCarrito.innerHTML = "<p>🛒 Tu carrito está vacío</p>";
+          badge.style.display = "none";
+          totalCarrito.textContent = "";
+          return;
+        }
+
+        let totalGeneral = 0;
+        carrito.forEach((producto, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${producto.nombre}</strong><br>
+            Precio unitario: $${producto.precioUnitario.toLocaleString("es-CO")}<br>
+            Talla: ${producto.talla}<br>
+            Cantidad: ${producto.cantidad}<br>
+            Subtotal: $${producto.total.toLocaleString("es-CO")}
+            <br><button class="eliminar" data-index="${index}">❌ Eliminar</button>
+          `;
+          listaCarrito.appendChild(li);
+          totalGeneral += producto.total;
+        });
+
+        totalCarrito.innerText = `Total: $${totalGeneral.toLocaleString("es-CO")}`;
+        let totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        badge.textContent = totalProductos;
+        badge.style.display = "block";
+
+        document.querySelectorAll(".eliminar").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            let index = e.target.dataset.index;
+            carrito.splice(index, 1);
+            mostrarCarrito();
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fce4ec;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  height: 60px;
+}
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #e91e63;
+}
+/* BOTÓN DE CAMBIO DE TEMA */
+.theme-switcher button {
+  background: #e91e63;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  font-size: 1.2rem;
+}
+
+.theme-switcher button:hover {
+  background: #c2185b;
+}
+
+/* Mostrar solo un ícono según el tema */
+.theme-switcher .dark-icon {
+  display: none;
+}
+
+body.dark-mode .theme-switcher .light-icon {
+  display: none;
+}
+
+body.dark-mode .theme-switcher .dark-icon {
+  display: inline;
+}
+/* LAYOUT */
+.catalogo-layout {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #e91e63;
+}
+
+/* ACORDEÓN */
+.accordion {
+  background: #f8f8f8;
+  color: #444;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  transition: background 0.3s;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.accordion:hover {
+  background: #fce4ec;
+}
+.accordion.active {
+  background: #e91e63;
+  color: #fff;
+}
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-bottom: 15px;
+}
+.panel ul {
+  list-style: none;
+  padding: 10px 0 0 10px;
+}
+.panel ul li {
+  margin-bottom: 10px;
+}
+.panel ul li a {
+  text-decoration: none;
+  color: #555;
+}
+.panel ul li a:hover {
+  color: #e91e63;
+}
+.panel label {
+  display: block;
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+/* PRODUCTOS */
+.productos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+  gap: 25px;
+}
+.producto {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.producto img {
+  width: 100%;
+  height: 250px; /* altura uniforme */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease; /* transición suave */
+}
+.producto:hover img {
+  transform: scale(1.05); /* zoom en hover */
+}
+.producto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+.precio {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 1200px) {
+  .productos {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+}
+@media (max-width: 768px) {
+  .productos {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+@media (max-width: 480px) {
+  .productos {
+    grid-template-columns: 1fr; /* 1 columna */
+  }
+}
+
+/* FOOTER */
+.footer-container {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+  padding: 60px 40px 30px;
+  color: #fff;
+  margin-top: 60px;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.discount-card, .contact-card {
+  background: #fff;
+  color: #333;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.discount-title, .contact-title {
+  color: #e91e63;
+  font-weight: 600;
+}
+.discount-form {
+  display: flex;
+  margin: 15px 0;
+}
+.discount-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px 0 0 6px;
+  border: 1px solid #ddd;
+}
+.discount-form button {
+  background: #e91e63;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.discount-form button:hover {
+  background: #c2185b;
+}
+.coupon-box {
+  border: 2px dashed #e91e63;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+.coupon-code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e91e63;
+}
+.whatsapp-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #25D366, #128C7E);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+.whatsapp-btn:hover {
+  opacity: 0.9;
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .catalogo-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    order: -1;
+  }
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+
+body.dark-mode header {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+body.dark-mode header nav a {
+  color: #ddd;
+}
+body.dark-mode header nav a:hover {
+  color: #ff80ab;
+}
+
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .accordion {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
+body.dark-mode .accordion:hover {
+  background: #333;
+}
+body.dark-mode .accordion.active {
+  background: #ff4081;
+  color: #fff;
+}
+
+body.dark-mode .producto {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .discount-card,
+body.dark-mode .contact-card {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .footer-container {
+  background: linear-gradient(135deg, #333, #111);
+}

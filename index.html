@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Little Princess - Disfraces infantiles para bebés de 0 a 12 meses. Los mejores disfraces de princesas para tus pequeñas.">
+  <meta name="keywords" content="disfraces, bebés, princesas, infantiles, Halloween, fiestas">
+  <title>Little Princess - Disfraces Infantiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Estilos.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="https://t3.ftcdn.net/jpg/05/89/82/32/360_F_589823248_ZynFeeUtcH3jTTtYEWPxfxGFWuk65lVc.jpg"alt="Little Princess Logo" class="logo">
+    </div>
+
+    <div class="nav-container">
+      <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#contacto">AYUDA</a>
+        <a href="#contacto">CONTACTO</a>
+        <a href="#nosotros">SOBRE NOSOTROS</a>
+      </nav>
+
+      <!-- Botón de tema dentro del header -->
+      <div class="theme-switcher">
+        <button id="theme-toggle" aria-label="Cambiar tema">
+          <span class="light-icon">☀️</span>
+          <span class="dark-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero con video -->
+  <section id="inicio" class="hero">
+    <video autoplay muted loop playsinline class="video-fondo">
+      <source src="https://github.com/luiscaballeroadasu-dotcom/gif/raw/refs/heads/main/pinterest-video.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5
+    </video>
+    <div class="hero-content">
+      <h1>Bienvenido a Little Princess</h1>
+      <div class="btn-container">
+        <a href="Catalogo.html" class="btn">Ver productos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Audio -->
+  <section id="ayuda" class="audio-section">
+    <div class="audio-container">
+      <h2>La Magia de Little Princess</h2>
+      <p>Disfruta de nuestra melodía característica</p>
+      <audio controls class="audio-player">
+        <source src="assets/melodia-princesas.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      <div class="audio-controls">
+        <button class="audio-btn play">▶️ Reproducir</button>
+        <button class="audio-btn pause">⏸️ Pausar</button>
+        <button class="audio-btn mute">🔇 Silenciar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="nosotros">
+    <div class="nosotros-texto">
+      <p class="subtitulo">Bienvenidos a Little Princess</p>
+      <h1>Los mejores disfraces para tus princesas</h1>
+      <p>
+        Creemos que cada bebé merece sentirse como la protagonista de su propio cuento de hadas. 
+        Nuestra tienda nació del amor por la ternura, la fantasía y los momentos inolvidables que 
+        se viven en el primer año de vida. Por eso, nos especializamos en ofrecer disfraces de 
+        princesas diseñados exclusivamente para bebés niñas de 0 a 12 meses.
+      </p>
+      <p>
+        Cada uno de nuestros disfraces está confeccionado pensando en la comodidad, seguridad y 
+        suavidad que tu bebé necesita, sin dejar de lado el estilo encantador y mágico que 
+        caracteriza a nuestras pequeñas clientas.
+      </p>
+    </div>
+
+    <div class="nosotros-imagenes">
+      <img src="https://i.pinimg.com/736x/d3/f0/46/d3f046567958427fe7cb8969e591ada1.jpg" alt="Niña disfrazada de princesa">
+      <img src="https://i.pinimg.com/originals/60/02/af/6002af3bac6af228c977c12374635ee0.jpg" alt="Madre e hija disfrazadas en Halloween">
+    </div>
+  </section>
+
+  <!-- Sección Destacados -->
+  <section class="destacados">
+    <h2 class="destacados-titulo">✨ Destacados ✨</h2>
+
+    <div class="carrusel-fullwidth-container">
+      <button class="carrusel-btn prev">&#10094;</button>
+      <button class="carrusel-btn next">&#10095;</button>
+
+      <div class="carrusel-fullwidth">
+        <!-- Producto 1 -->
+        <div class="carrusel-item-full">
+          <a href="bella_bestia.html" class="producto">
+            <img src="https://nombresde.com/wp-content/uploads/2023/07/shutterstock_1338414662-768x512.jpg" alt="Bella y la Bestia">
+            <h3>Bella y la Bestia</h3>
+          </a>
+        </div>
+        <!-- Producto 2 -->
+        <div class="carrusel-item-full">
+          <a href="Interfaz de Producto moana.html" class="producto">
+            <img src="https://i.pinimg.com/736x/e6/ac/f9/e6acf9f33b54a6fb4c06c7efdcc04dc1.jpg" alt="Moana">
+            <h3>Moana</h3>
+          </a>
+        </div>
+        <!-- Producto 3 -->
+        <div class="carrusel-item-full">
+          <a href="sirenita.html" class="producto">
+            <img src="https://i.pinimg.com/1200x/b5/9b/3b/b59b3b866370ffd4ca78b9188b071013.jpg" alt="La Sirenita">
+            <h3>La Sirenita</h3>
+          </a>
+        </div>
+        <!-- Producto 4 -->
+        <div class="carrusel-item-full">
+          <a href="elsa.html" class="producto">
+            <img src="https://i.pinimg.com/1200x/8e/f2/1f/8ef21fe871cb8db2f736b25e9530a331.jpg" alt="Frozen">
+            <h3>Frozen</h3>
+          </a>
+        </div>
+        <!-- Producto 5 -->
+        <div class="carrusel-item-full">
+          <a href="bella_durmiente.html" class="producto">
+            <img src="https://i.pinimg.com/736x/21/d5/ae/21d5ae705d0ca099f26b5e96fada8378.jpg" alt="Rapunzel">
+            <h3>Bella Durmiente</h3>
+          </a>
+        </div>
+        <!-- Producto 6 -->
+        <div class="carrusel-item-full">
+          <a href="cenicienta.html" class="producto">
+            <img src="https://i.pinimg.com/736x/06/68/16/0668162b9f5f627aaafd354930f7f8ed.jpg" alt="Cenicienta">
+            <h3>Cenicienta</h3>
+          </a>
+        </div>
+        <!-- Producto 7 -->
+        <div class="carrusel-item-full">
+          <a href="Interfaz de Producto.html" class="producto">
+            <img src="https://i.pinimg.com/736x/3b/19/1b/3b191b43f0de190aacee6da829eb2092.jpg" alt="Blancanieves">
+            <h3>Blancanieves</h3>
+          </a>
+        </div>
+        <!-- Producto 8 -->
+        <div class="carrusel-item-full">
+          <a href="merida.html" class="producto">
+            <img src="https://i.pinimg.com/736x/ca/3b/51/ca3b513d9e85b57ee44c29326f0f6862.jpg" alt="Mérida">
+            <h3>Mérida</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section class="catalogo">
+    <div class="container">
+      <h2 class="titulo-seccion">Nuestras Colecciones</h2>
+      <p class="subtitulo-seccion">Encuentra el disfraz perfecto para cada etapa</p>
+      
+      <div class="colecciones-grid">
+        <!-- Colección 1 -->
+        <div class="coleccion-card">
+          <div class="coleccion-imagen">
+            <img src="https://i.pinimg.com/1200x/85/14/df/8514dfa67f0edb689b423e463b1fb3aa.jpg" alt="Bebé 0-4 meses">
+            <div class="edad-badge">0-4 meses</div>
+          </div>
+          <div class="coleccion-content">
+            <h3>Primeros Encantos</h3>
+            <ul class="coleccion-beneficios">
+              <li>Diseños ultra suaves</li>
+              <li>Materiales hipoalergénicos</li>
+              <li>Fáciles de poner</li>
+            </ul>
+            <a href="#" class="btn-ver">Ver Colección</a>
+          </div>
+        </div>
+        
+        <!-- Colección 2 -->
+        <div class="coleccion-card destacada">
+          <div class="coleccion-imagen">
+            <img src="https://i.pinimg.com/736x/4c/c5/e6/4cc5e6872425a6336decdf8d0e936eeb.jpg" alt="Bebé 4-8 meses">
+            <div class="edad-badge">4-8 meses</div>
+          </div>
+          <div class="coleccion-content">
+            <h3>Pequeñas Princesas</h3>
+            <ul class="coleccion-beneficios">
+              <li>Mayor movilidad</li>
+              <li>Diseños interactivos</li>
+              <li>Lavables fácilmente</li>
+            </ul>
+            <a href="#" class="btn-ver">Ver Colección</a>
+          </div>
+        </div>
+        
+        <!-- Colección 3 -->
+        <div class="coleccion-card">
+          <div class="coleccion-imagen">
+            <img src="https://i.pinimg.com/1200x/69/b1/ce/69b1ce8723816f69175e0f8cfcebd915.jpg" alt="Bebé 8-12 meses">
+            <div class="edad-badge">8-12 meses</div>
+          </div>
+          <div class="coleccion-content">
+            <h3>Aventuras Reales</h3>
+            <ul class="coleccion-beneficios">
+              <li>Diseños más elaborados</li>
+              <li>Resistente al gateo</li>
+              <li>Accesorios incluidos</li>
+            </ul>
+            <a href="#" class="btn-ver">Ver Colección</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacto" class="footer-container">
+    <div class="footer-content">
+      <!-- Tarjeta de Descuento -->
+      <div class="discount-card">
+        <div class="discount-header">
+          <span class="discount-icon">🎁</span>
+          <h3 class="discount-title">Obtén tu 10% de descuento</h3>
+        </div>
+        <p class="discount-text">
+          Regístrate con tu email y recibe tu cupón al instante para tu primer pedido
+        </p>
+        <form class="discount-form">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit">¡Quiero mi descuento!</button>
+        </form>
+        <div class="coupon-box">
+          <p class="coupon-label">Tu código promocional:</p>
+          <p class="coupon-code">PRINCESA10</p>
+          <p class="coupon-note">*Válido para primer pedido</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Contacto -->
+      <div class="contact-card">
+        <div class="contact-header">
+          <div class="contact-icon">📱</div>
+          <h3 class="contact-title">Contáctanos</h3>
+        </div>
+        <p class="contact-text">¿Tienes preguntas o quieres hacer un pedido especial?</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-item-icon">✉️</span>
+            <span>contacto@littleprincess.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📞</span>
+            <span>(57) 301 598 4000</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📍</span>
+            <span>Barranquilla, Colombia</span>
+          </div>
+        </div>
+        
+        <a href="https://wa.me/573015984000" class="whatsapp-btn">
+          <span class="whatsapp-icon">💬</span>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 Little Princess - Email: comunicacion@littleprincess.com. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===== CHATBOT ===== -->
+  <div>
+    <div class="chatbot-container" id="chatbot">
+      <div class="chatbot-header">Asistente Virtual 🤖</div>
+      <div class="chatbot-messages">
+        <p><strong>Bot:</strong> ¡Hola! 👋 ¿En qué puedo ayudarte?</p>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" placeholder="Escribe un mensaje...">
+        <button>➤</button>
+      </div>
+    </div>
+    <button class="chatbot-toggle" id="chatbot-toggle">💬</button>
+  </div>
+  <!-- JS Carrusel + Tema + Audio -->
+  <script>
+    // Carrusel
+    document.addEventListener('DOMContentLoaded', function() {
+      const carrusel = document.querySelector(".carrusel-fullwidth");
+      const prevBtn = document.querySelector(".carrusel-btn.prev");
+      const nextBtn = document.querySelector(".carrusel-btn.next");
+      const items = document.querySelectorAll(".carrusel-item-full");
+      
+      let currentIndex = 0;
+      let itemWidth = items[0].offsetWidth;
+      const gap = 20;
+
+      function updateCarrusel() {
+        const moveAmount = currentIndex * (itemWidth + gap);
+        carrusel.style.transform = `translateX(-${moveAmount}px)`;
+      }
+
+      function calculateVisibleItems() {
+        return Math.floor(window.innerWidth / (itemWidth + gap));
+      }
+
+      nextBtn.addEventListener("click", () => {
+        const visibleItems = calculateVisibleItems();
+        if (currentIndex < items.length - visibleItems) {
+          currentIndex++;
+          updateCarrusel();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarrusel();
+        }
+      });
+
+      window.addEventListener("resize", function() {
+        itemWidth = items[0].offsetWidth;
+        updateCarrusel();
+      });
+
+      updateCarrusel();
+    });
+
+    // Tema claro/oscuro
+    const themeToggle = document.getElementById('theme-toggle');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      themeToggle.setAttribute(
+        'aria-label',
+        currentTheme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'
+      );
+    });
+
+    // Control de audio
+    const audioPlayer = document.querySelector('.audio-player');
+    const playBtn = document.querySelector('.play');
+    const pauseBtn = document.querySelector('.pause');
+    const muteBtn = document.querySelector('.mute');
+    
+    playBtn.addEventListener('click', () => {
+      audioPlayer.play();
+      playBtn.disabled = true;
+      pauseBtn.disabled = false;
+    });
+    
+    pauseBtn.addEventListener('click', () => {
+      audioPlayer.pause();
+      playBtn.disabled = false;
+      pauseBtn.disabled = true;
+    });
+    
+    muteBtn.addEventListener('click', () => {
+      audioPlayer.muted = !audioPlayer.muted;
+      muteBtn.textContent = audioPlayer.muted ? '🔊 Sonido' : '🔇 Silenciar';
+      muteBtn.classList.toggle('muted', audioPlayer.muted);
+    });
+
+    // Inicializar controles
+    pauseBtn.disabled = true;
+    // Fin del primer script
+  </script>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    const chatbot = document.getElementById('chatbot');
+    const toggleBtn = document.getElementById('chatbot-toggle');
+
+    toggleBtn.addEventListener('click', () => {
+      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+  </script>
+</body>
+</html>
